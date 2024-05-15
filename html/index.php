@@ -25,6 +25,6 @@
         </div>
     </div>
 
-    
+    <script src="./js/main.jsx"></script>
 </body>
 </html> 
