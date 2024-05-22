@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body> 
-    <div class="container">
+    <div class="loadingbox">
         <div class="test">
             <div class="orb"></div>
         </div>

@@ -6,7 +6,6 @@ const warning = () => {
     console.log(titel.textContent);
 }
 const yeet = () => {
-    
     const bounce = Math.floor(Math.random() * 100);
     titel.style = `margin-top: ${bounce}px`;
 }

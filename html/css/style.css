@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-.container {
+.loadingbox {
     height:700px;
     width: 100%;
     background-color: #000000;
@@ -61,6 +61,26 @@
     width: 500px;
     border-radius: 100%;
     background-color: #00f000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* header page */
+.container {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.header-box {
+    height: auto;
+    width: auto;
     display: flex;
     flex-direction: row;
     align-items: center;
