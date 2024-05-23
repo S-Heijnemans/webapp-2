@@ -1,3 +1,7 @@
+<?php
+    include "pages/conn.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +11,10 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body> 
+<?php 
+    include "pages/header.php";
+?>
+     
     <div class="loadingbox">
         <div class="test">
             <div class="orb"></div>
@@ -29,6 +37,12 @@
     </div>
     <button onclick="warning();"> button</button>
     <button onmouseover="yeet();"> yeet</button>
+
+    <form class='search-bar' action="search.php" name='search' method="POST">
+                    <label>search:</label>
+                    <input type="text" name='search' placeholder="Search" required>
+                    <input type="submit" value="Search">
+                </form>
 
 
     <script src="./js/main.jsx"></script>
