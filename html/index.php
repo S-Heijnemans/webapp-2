@@ -1,5 +1,5 @@
 <?php
-    include "pages/conn.php";
+    include "includes/conn.php";
 ?>
 
 <!DOCTYPE html>
@@ -9,10 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/css/style.css">
+     
 </head>
 <body> 
 <?php 
-    include "pages/header.php";
+    include "includes/header.php";
 ?>
      
     <div class="loadingbox">
@@ -38,13 +39,18 @@
     <button onclick="warning();"> button</button>
     <button onmouseover="yeet();"> yeet</button>
 
-    <form class='search-bar' action="search.php" name='search' method="POST">
+    <form class='search-bar' action="pages/search.php" name='search' method="POST">
                     <label>search:</label>
                     <input type="text" name='search' placeholder="Search" required>
                     <input type="submit" value="Search">
                 </form>
-
+    <div class="login-button">
+        <a href="pages/login.php">Login</a>
+    </div>
 
     <script src="./js/main.jsx"></script>
+<?php 
+    include "includes/footer.php";
+?>
 </body>
 </html> 

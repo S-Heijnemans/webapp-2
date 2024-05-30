@@ -1,6 +1,3 @@
-   <?php
-
-?>
 <div class="container">
     <div class="header-box">
         <img></img>
