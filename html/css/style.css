@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    background-color: #F6FFFE;
+}
 .loadingbox {
     height:700px;
     width: 100%;
@@ -66,7 +69,97 @@
     align-items: center;
     justify-content: center;
 }
-
+.hero-box-index {
+    height: 523px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.image-hero-box-index {
+    height: auto;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.info-hero-box-index {
+    height: auto;
+    width: 50%;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.info-hero-box-top-index{
+    height: auto;
+    width: 66%;
+    right: 20px;
+}
+.style-line-hero-box-index {
+    height: 1px;
+    width: 280px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: #000000;
+}
+.info-hero-box-bottom-index {
+    height: auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.buttuns-top-hero-box-index {
+    height: auto;
+    width: 100%;
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.destinations-button-hero-index, .bookAFlight-button-hero-index {
+    height: 55px;
+    width: 240px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px 0.5px #e7e7e7;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.destinations-button-hero-index {
+    background-color: #FF9900;
+}
+.bookAFlight-button-hero-index {
+    background-color: #ffffff;
+}
+.buttuns-bottum-hero-box-index {
+    height: auto;
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.bottum-button-hero-index {
+    height: 38px;
+    width: 101px;
+    border: 1px solid #e7e7e7;
+    border-radius: 20px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
 
 /*                                          FIXME:  header page                                                                 */
 
