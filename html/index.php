@@ -18,6 +18,8 @@
 <?php 
     include "includes/header.php";
     include "includes/index-includes/hero.php";
+
+    include "includes/index-includes/favorit.php";
 ?>
      
     <div class="loadingbox">

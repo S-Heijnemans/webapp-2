@@ -3,6 +3,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.m-plus-rounded-1c-regular {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
 body {
     background-color: #F6FFFE;
 }
@@ -67,8 +74,12 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: center;    
 }
+
+
+
+/* hero box index */
 .hero-box-index {
     height: 523px;
     width: 100%;
@@ -161,6 +172,43 @@ body {
     justify-content: center;
 }
 
+
+
+/* favorit box index */
+.favorit-box-index {
+    height: 375px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.pruducts-favorit-container-index {
+    height: auto;
+    width: 84%;
+    gap: 2%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.pruduct-favorit-box-index {
+    height: 225px;
+    width: 30%;
+    background-color: #00f000;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* spesial offers index */
+
+
 /*                                          FIXME:  header page                                                                 */
 
 .container {
@@ -190,6 +238,10 @@ body {
 
 
 /*                                          FIXME: footer page                                                                 */
+
+
+
+/*                                          FIXME: trips page                                                                  */
 
 
 

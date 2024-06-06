@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-<?php 
-    include "../includes/header.php";
-
+    <div class="Special-offers-container-index">
+        <div class="special-offers-box-index">
+            
+        </div>
+    </div>
     
-    
-    include "../includes/footer.php";
-?>   
 </body>
 </html>
