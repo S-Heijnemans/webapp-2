@@ -7,12 +7,6 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-<?php 
-    include "../includes/header.php";
-
-    include "../includes/trips-includes/searchbar.php";
     
-    include "../includes/footer.php";
-?>   
 </body>
-</html>
+</html> 

@@ -54,6 +54,7 @@
         <a href="pages/login.php">Login</a>
     </div>
 
+    <a href="pages/trips.php">trips</a>
     <script src="./js/main.jsx"></script>
 <?php 
     include "includes/footer.php";
