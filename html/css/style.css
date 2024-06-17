@@ -329,6 +329,20 @@ body {
 /* searchbar trips */
 
 
+/*                                          FIXME: trips-info page                                                             */
+
+.hero-container-trips-info {
+    height: auto;
+    width: 100%;
+    gap: 20px;
+    display: flex;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
 
 /*                                          FIXME: login page                                                                  */
 
