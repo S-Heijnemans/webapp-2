@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'conn.php';
+include '../conn.php';
 
 if(empty($_POST['username']) || empty($_POST['password'])) {
     header("Location: login.php");
@@ -19,8 +19,8 @@ if (!$user) {
     header("Location: login.php");
  } else {
     $_SESSION["user"] = $username;
-    $_SESSION["id"] = $user["id"];
+    $_SESSION["user_id"] = $user["user_id"];
 
-    header("Location: dashboard.php");
+    header("Location: ../../pages/dashboard.php");
  }
 ?>
