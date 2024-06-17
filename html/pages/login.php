@@ -13,7 +13,7 @@
 
 <div class='container'>
         <div class='block-login'>
-              <form class='form-login-tabel' action="login_logic.php" name='login_logic' method="POST">
+              <form class='form-login-tabel' action="../includes/login-includes/login_logic.php" name='login_logic' method="POST">
                     <label>Username:</label>
                     <input type="text" name='username' placeholder="Username" required>
                     <label>Password:</label>
