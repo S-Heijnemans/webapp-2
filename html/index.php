@@ -20,6 +20,7 @@
     include "includes/index-includes/hero.php";
 
     include "includes/index-includes/favorit.php";
+    include "includes/index-includes/special_offer.php"
 ?>
      
     <div class="loadingbox">

@@ -9,7 +9,26 @@
     font-weight: 400;
     font-style: normal;
   }
-
+a {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+h1 {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+h3 {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+h2, h4, h5 {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
 body {
     background-color: #F6FFFE;
 }
@@ -135,7 +154,7 @@ body {
     align-items: center;
     justify-content: center;
 }
-.destinations-button-hero-index, .bookAFlight-button-hero-index {
+.destinations-button-hero-index, .bookAFlight-button-hero-index, .Book-now-button-special-offers-index {
     height: 55px;
     width: 240px;
     border-radius: 8px;
@@ -203,12 +222,41 @@ body {
     align-items: center;
     justify-content: center;
 }
+.title-favorit-box-index {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
 
 
 
 /* special offers index */
-
-
+.Special-offers-container-index {
+    height: 542px;
+    width: 100%;
+    background-color: #D5D4FE;
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.special-offers-box-index {
+    height: auto;
+    width: 268px;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.special-offers-title-text-index, .special-offers-sale-amount-index {
+    color: #3300FF;
+}
+.Book-now-button-special-offers-index {
+    background-color: #3300FF;
+    color: #ffffff;
+}
 /*                                          FIXME:  header page                                                                 */
 
 .container {
