@@ -257,6 +257,10 @@ body {
     background-color: #3300FF;
     color: #ffffff;
 }
+.info-container-special-offers-index {
+    height: auto;
+    width: 690px;
+}
 /*                                          FIXME:  header page                                                                 */
 
 .container {

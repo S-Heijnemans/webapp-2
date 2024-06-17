@@ -27,8 +27,15 @@
         </div>
         <img src="../../assets/Image-special-offers-index.png" alt="image not loading">
         <div class="info-container-special-offers-index">
-            <div class="info-titel-special-offers-index"></div>
-            <div class="info-text-special-offers-index"></div>
+            <div class="info-titel-special-offers-index">
+                <h1>Travel to Turkey and take a beautiful hot</h1>
+                <h1> air balloon ride over the landscape!</h1>
+            </div>
+            <div class="info-text-special-offers-index">
+                <a>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis interdum porta consequat.</a>
+                <a>Nunc nec ipsum magna. Donec sollicitudin gravida porta. Donec molestie gravida laoreet.</a>
+                <a>Nam non vestibulum purus. Ut suscipit libero ac vehicula suscipit. Curabitur.</a>
+            </div>
         </div>
     </div>
     
