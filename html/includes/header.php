@@ -20,7 +20,7 @@
             <ul class="main-nav-list">
                 <li><a class="main-nav-link" href="../index.php">Home</a></li>
                 <li><a class="main-nav-link" href="../pages/about_us.php">About us</a></li>
-                <li><a class="main-nav-link" href="../pages/product.php">Trips</a></li>
+                <li><a class="main-nav-link" href="../pages/trips.php">Trips</a></li>
                 <li><a class="main-nav-link" href="../pages/contact.php">Contact</a></li>
                 <li><a class="main-nav-link" href="../pages/login.php">Login</a></li>
             </ul>
