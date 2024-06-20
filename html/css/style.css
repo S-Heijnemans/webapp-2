@@ -279,11 +279,14 @@ body {
     gap: 3.2rem;
 }
  
-.main-nav-link{
+.main-nav-link, .main-nav-link-blue{
     text-decoration: none;
     color: #000000;
     font-weight: 600;
     font-size: 1.8rem;
+}
+.main-nav-link-blue {
+    color: #3300FF;
 }
 
 .container {
@@ -315,7 +318,7 @@ body {
 /*                                          FIXME: footer page                                                                 */
 
 .container-footer {
-    height: 814px;
+    height: 750px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -362,6 +365,16 @@ body {
     align-items: center;
     justify-content: center;
 }
+.nav-container-footer {
+    height: auto;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 
 
 /*                                          FIXME: footer page                                                                 */

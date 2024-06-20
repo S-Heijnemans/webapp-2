@@ -51,10 +51,12 @@
         <div class="style-line-footer"></div>
 
         <div class="nav-container-footer">
-            <div class="title-text-nav-footer">
-                <h1> </h1>
-            
-            </div>
+        <ul class="main-nav-list">
+                <li><a class="main-nav-link" href="../index.php">Home</a></li>
+                <li><a class="main-nav-link" href="../pages/about_us.php">About us</a></li>
+                <li><a class="main-nav-link-blue" href="../pages/trips.php">Trips</a></li>
+                <li><a class="main-nav-link" href="../pages/contact.php">Contact</a></li>
+            </ul>
         </div>
     </div>
 </body>
