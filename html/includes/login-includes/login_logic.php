@@ -20,7 +20,11 @@ if (!$user) {
  } else {
     $_SESSION["user"] = $username;
     $_SESSION["user_id"] = $user["user_id"];
-
-    header("Location: ../../pages/dashboard.php");
+    if ($user["roles"] <= 5) {
+        header("Location: ../../pages/dashboard.php");
+    } else {
+        header("Location: ../../pages/user-dashboard.php");
+    }
+    // header("Location: ../../pages/dashboard.php");
  }
 ?>
