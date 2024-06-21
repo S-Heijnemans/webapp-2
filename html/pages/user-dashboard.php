@@ -23,6 +23,8 @@ session_start();
         <div class="profile-user-dashboard-container">
             <div class="profile-title-user-dashboard">
                 <h1>My profile</h1>
+            </div>
+            <div class="image-user-container-user-dashboard">
                 <div class="profile-img-user-dashboard">
                     
                 </div>
@@ -34,7 +36,6 @@ session_start();
                     <a>customer</a>
                     </div>     
                 </div>
-
             </div>
         </div>
 

@@ -16,7 +16,7 @@ $user = $stmt->fetch();
 
 
 if (!$user) {
-    header("Location: login.php");
+    header("Location: ../../pages/login.php");
  } else {
     $_SESSION["user"] = $username;
     $_SESSION["user_id"] = $user["user_id"];
