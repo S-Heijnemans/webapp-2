@@ -418,8 +418,20 @@ body {
 
 /*                                          FIXME: user dashboard page                                                         */
 
+.dashboard-balk-user-dashboard {
+    height: 100px;
+    width: 80%;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: 1px solid #e7e7e7;
+    margin-left: 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
 .user-dashboard-container {
-    height: 800px;
+    height: 600px;
     width: 100%;
     gap: 35px;
     display: flex;
@@ -471,4 +483,8 @@ body {
 }
 .role-profile-info-user-dashboard {
     font-size: 16px;
+}
+
+.edid-info-box-user-dashboard {
+    font-size: 48px;
 }

@@ -19,6 +19,10 @@ session_start();
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+
+    <div class="dashboard-balk-user-dashboard">
+        <h1>DASHBOARD</h1>
+    </div>
     <div class="user-dashboard-container">
         <div class="profile-user-dashboard-container">
             <div class="profile-title-user-dashboard">
@@ -40,7 +44,13 @@ session_start();
         </div>
 
         <div class="profile-info-user-dashboard-container">
-
+            <div class="edid-info-box-user-dashboard">
+                <a>edit information</a>
+                <img src="../../assets/pencil-user-dashboard.png" alt="image not loading">
+            </div>
+            <table class="table-info-user-dashboard">
+                <th></th>
+            </table>
         </div>
     </div>
 </body>
