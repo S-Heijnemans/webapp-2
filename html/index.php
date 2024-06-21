@@ -59,6 +59,7 @@
 
     <a href="pages/trips.php">trips</a>
     <script src="./js/main.jsx"></script>
+    <a href="pages/user-dashboard.php">user-dashboard</a>
 <?php 
     include "includes/footer.php";
 ?>
