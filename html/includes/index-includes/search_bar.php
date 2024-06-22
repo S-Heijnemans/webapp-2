@@ -1,6 +1,6 @@
 <?php
 try {
-    require_once "../includes/conn.php";
+    require_once "includes/conn.php";
 
     $stmt = $connection->prepare("SELECT airport_name, airport_id, city_name, country_name 
     FROM (airports 
@@ -19,16 +19,17 @@ try {
 
 ?>
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
-<form class="search_for_flight" action="../../pages/trips.php" method="post">
+<form class="search_for_flight" action="pages/trips.php" method="post">
 
     <select name="starting_location" id="starting_location" onchange="disableSameDestination()">
         <option value='' disabled selected>Start location</option>
@@ -52,7 +53,6 @@ try {
     <input type="date" name="end_date" id="enddate" onfocus="this.showPicker()" value="">
     <button type="submit">Submit</button>
 </form>
-
 <script src="../../js/sript.js"></script>
 </body>
 </html>

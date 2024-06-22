@@ -1,32 +1,54 @@
-<?php 
-    session_start();
-    include '../includes/conn.php';
-    include "../includes/header.php";
+<?php
+session_start();
+try {
+    require_once '../includes/conn.php';
 
-    include "../includes/dashboard-includes/dashNav.php";
+    $userId = $_SESSION['user_id'];
+    if (!isset($_SESSION['user'])) {
+        header("Location: login.php");
+        exit();
+    }
 
+    $stmt = $connection->prepare("SELECT roles FROM user WHERE user_id = $userId");
+    $stmt->execute();
+    $role = $stmt->fetch();
 
+} catch (PDOException $e) {
+    die('Query failed: ' . $e->getMessage());
 
-if (!isset($_SESSION['user'])) {
-    header("Location: login.php");
+}
+
+if ($role['roles'] > 9) {
+    header("Location: user-dashboard.php");
     exit();
 }
 
-echo "Welcome to the dashboard, " . $_SESSION['user'];
-    
-    // include "../includes/footer.php";
-?> 
 
+$rolename = match ($role['roles']) {
+    0 => "Owner",
+    1 => "CEO",
+    2 => "Dev",
+    3 => "Employee",
+    default => "Unknown role"
+};
 
+include "../includes/dashboard-includes/dashNav.php";
+include "../includes/header.php";
 
-    <a href='logout.php'>Click here to log out</a>
+echo "Welcome to the dashboard, " . $_SESSION['user'] . ".  You are a: " . $rolename;
+echo "<br>";
 
-    <?php
-
-    echo 'You are not logged in. <a href="login.php">Click here</a> to log in.';
+// include "../includes/footer.php";
 ?>
 
-<?php     include "../includes/add-product-includes/add_product.php";
+
+<a href='logout.php'>Click here to log out</a>
+
+<?php
+
+echo 'You are not logged in. <a href="login.php">Click here</a> to log in.';
+
+//include "../includes/add-product-includes/add_product.php";
 ?>
 
 
@@ -40,7 +62,6 @@ echo "Welcome to the dashboard, " . $_SESSION['user'];
 <body>
 
 
-
 </body>
 </html>
 
@@ -52,43 +73,56 @@ echo "Welcome to the dashboard, " . $_SESSION['user'];
 </form>
 
 
-
-
 <?php
-include '../includes/conn.php';
-$stmt = $connection->prepare("SELECT * FROM accommodations");
-$stmt->execute();
-$data = $stmt->fetchAll();
+try {
 
+    $stmt1 = $connection->prepare("SELECT * FROM accomodations");
+    $stmt1->execute();
+    $data = $stmt1->fetchAll();
+} catch (PDOException $e) {
+    die('Query failed: ' . $e->getMessage());
+}
+
+echo "<table>
+<tr>
+<th> Name </th>
+<th> Update </th>
+<th> Delete </th>
+<tr>
+";
 foreach ($data as $row) {
-    echo $row['name'];
-    echo "<a href='../includes/product-update-includes/product_update.php?id=".$row['accommodation_id']."'>Update</a>";
-    echo "<a href='../includes/product-delete-includes/product_delete.php?id=".$row['accommodation_id']."'>Delete</a>";
-    }
-?>
+    echo "<tr>";
+    echo "<td>" . $row['name'] . "</td>";
+    echo "<td>" . "<a href='../includes/product-update-includes/product_update.php?id='" . $row['accomodation_id'] . "<a>Update</a>" . "</td>";
+    echo "<td>" . "<a href='../includes/product-delete-includes/product_delete.php?id='" . $row['accomodation_id'] . "<a>Delete</a>" . "</td>";
+    echo "</tr>";
+}
+echo "</table>";
 
+
+?>
 
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content=
-		"width=device-width, initial-scale=1.0">
-	<title>Geeks for geeks Image Upload</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content=
+    "width=device-width, initial-scale=1.0">
+    <title>Geeks for geeks Image Upload</title>
 </head>
 
 <body>
-	<h1>Upload Images</h1>
+<h1>Upload Images</h1>
 
-	<form method='post' action=''
-		enctype='multipart/form-data'>
-		<input type='file' name='files[]' multiple />
-		<input type='submit' value='Submit' name='submit' />
-	</form>
+<form method='post' action=''
+      enctype='multipart/form-data'>
+    <input type='file' name='files[]' multiple/>
+    <input type='submit' value='Submit' name='submit'/>
+</form>
 
-	<a href="../assets/uploads/view.php">|View Uploads|</a>
+<a href="../assets/uploads/view.php">|View Uploads|</a>
 </body>
 
 </html>

@@ -8,32 +8,38 @@
     font-family: "M PLUS Rounded 1c", sans-serif;
     font-weight: 400;
     font-style: normal;
-  }
+}
+
 a {
     font-family: "M PLUS Rounded 1c", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
+
 h1 {
     font-family: "M PLUS Rounded 1c", sans-serif;
     font-weight: 600;
     font-style: normal;
 }
+
 h3 {
     font-family: "M PLUS Rounded 1c", sans-serif;
     font-weight: 600;
     font-style: normal;
 }
+
 h2, h4, h5 {
     font-family: "M PLUS Rounded 1c", sans-serif;
     font-weight: 500;
     font-style: normal;
 }
+
 body {
     background-color: #F6FFFE;
 }
+
 .loadingbox {
-    height:700px;
+    height: 700px;
     width: 100%;
     background-color: #000000;
     display: flex;
@@ -41,50 +47,59 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 .test, .test-1, .test-2, .test-3, .test-4 {
     height: 80px;
     width: 160px;
     rotate: 0;
 }
+
 .test {
     animation: spinn 2s -0.2s infinite ease;
     z-index: 1;
     position: absolute;
 }
+
 .test-1 {
     animation: spinn 2s 0s infinite ease;
     z-index: 2;
     position: absolute;
 }
+
 .test-2 {
     animation: spinn 2s 0.2s infinite ease;
     z-index: 3;
     position: absolute;
 }
+
 .test-3 {
     animation: spinn 2s 0.4s infinite ease;
     z-index: 4;
     position: absolute;
 }
+
 .test-4 {
     animation: spinn 2s 0.6s infinite ease;
     z-index: 5;
     position: absolute;
 }
+
 @keyframes spinn {
     0% {
-        transform: rotate( 0deg ) scale( 1 );
-      }
+        transform: rotate(0deg) scale(1);
+    }
     100% {
-        transform: rotate( 360deg ) scale( 1 );
-      }
+        transform: rotate(360deg) scale(1);
+    }
 }
+
 .orb {
     height: 20px;
     width: 20px;
     border-radius: 100%;
     background-color: #b0b0b0;
 }
+
 .boxtitel {
     height: 500px;
     width: 500px;
@@ -93,9 +108,8 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;    
+    justify-content: center;
 }
-
 
 
 /* hero box index */
@@ -108,6 +122,7 @@ body {
     justify-content: center;
     gap: 20px;
 }
+
 .image-hero-box-index {
     height: auto;
     width: 50%;
@@ -116,6 +131,7 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 .info-hero-box-index {
     height: auto;
     width: 50%;
@@ -125,11 +141,13 @@ body {
     align-items: center;
     justify-content: center;
 }
-.info-hero-box-top-index{
+
+.info-hero-box-top-index {
     height: auto;
     width: 66%;
     right: 20px;
 }
+
 .style-line-hero-box-index {
     height: 1px;
     width: 280px;
@@ -137,6 +155,7 @@ body {
     margin-bottom: 5px;
     background-color: #000000;
 }
+
 .info-hero-box-bottom-index {
     height: auto;
     width: 80%;
@@ -145,6 +164,7 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 .buttuns-top-hero-box-index {
     height: auto;
     width: 100%;
@@ -154,6 +174,7 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 .destinations-button-hero-index, .bookAFlight-button-hero-index, .Book-now-button-special-offers-index {
     height: 55px;
     width: 240px;
@@ -164,12 +185,15 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 .destinations-button-hero-index {
     background-color: #FF9900;
 }
+
 .bookAFlight-button-hero-index {
     background-color: #ffffff;
 }
+
 .buttuns-bottum-hero-box-index {
     height: auto;
     width: 100%;
@@ -179,6 +203,7 @@ body {
     align-items: center;
     justify-content: space-around;
 }
+
 .bottum-button-hero-index {
     height: 38px;
     width: 101px;
@@ -192,7 +217,6 @@ body {
 }
 
 
-
 /* favorit box index */
 .favorit-box-index {
     height: 375px;
@@ -203,6 +227,7 @@ body {
     justify-content: center;
     gap: 20px;
 }
+
 .pruducts-favorit-container-index {
     height: auto;
     width: 84%;
@@ -212,6 +237,7 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 .pruduct-favorit-box-index {
     height: 225px;
     width: 30%;
@@ -222,12 +248,12 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 .title-favorit-box-index {
     font-family: "M PLUS Rounded 1c", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
-
 
 
 /* special offers index */
@@ -241,6 +267,7 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 .special-offers-box-index {
     height: auto;
     width: 268px;
@@ -250,24 +277,28 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 .special-offers-title-text-index, .special-offers-sale-amount-index {
     color: #3300FF;
 }
+
 .Book-now-button-special-offers-index {
     background-color: #3300FF;
     color: #ffffff;
 }
+
 .info-container-special-offers-index {
     height: auto;
     width: 690px;
 }
+
 /*                                          FIXME:  header page                                                                 */
 
 .header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:#ff0000;
+    background-color: #ff0000;
     height: 9.6rem;
     padding: 0 4.8rem;
     gap: 2rem;
@@ -278,13 +309,14 @@ body {
     display: flex;
     gap: 3.2rem;
 }
- 
-.main-nav-link, .main-nav-link-blue{
+
+.main-nav-link, .main-nav-link-blue {
     text-decoration: none;
     color: #000000;
     font-weight: 600;
     font-size: 1.8rem;
 }
+
 .main-nav-link-blue {
     color: #3300FF;
 }
@@ -294,6 +326,7 @@ body {
     width: auto;
     display: flex;
 }
+
 .header-box {
     height: auto;
     width: auto;
@@ -302,6 +335,7 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 .popUpNotifiction {
     position: fixed;
     top: 0;
@@ -314,7 +348,6 @@ body {
 }
 
 
-
 /*                                          FIXME: footer page                                                                 */
 
 .container-footer {
@@ -325,6 +358,7 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 .icon-container-footer {
     height: 40%;
     width: 90%;
@@ -333,6 +367,7 @@ body {
     align-items: center;
     justify-content: space-around;
 }
+
 .icon-box-footer {
     height: auto;
     width: 250px;
@@ -341,6 +376,7 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 .text-icon-box-footer {
     height: autp;
     margin-top: 25px;
@@ -350,11 +386,13 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 .style-line-footer {
     height: 1.5px;
     width: 75%;
     background-color: #e7e7e7;
 }
+
 .info-cotainer-footer {
     height: auto;
     width: 55%;
@@ -365,6 +403,7 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 .nav-container-footer {
     height: auto;
     width: 100%;
@@ -376,9 +415,7 @@ body {
 }
 
 
-
 /*                                          FIXME: footer page                                                                 */
-
 
 
 /*                                          FIXME: trips page                                                                  */
@@ -399,21 +436,16 @@ body {
 }
 
 
-
 /*                                          FIXME: login page                                                                  */
-
 
 
 /*                                          FIXME: detail page                                                                 */
 
 
-
 /*                                          FIXME: about_us pagen                                                              */
 
 
-
 /*                                          FIXME: dashboard page                                                              */
-
 
 
 /*                                          FIXME: user dashboard page                                                         */
@@ -427,6 +459,7 @@ body {
     align-items: center;
     justify-content: space-around;
 }
+
 .profile-user-dashboard-container {
     height: auto;
     width: 30%;
@@ -469,6 +502,37 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 .role-profile-info-user-dashboard {
     font-size: 16px;
+}
+
+
+.search_for_flight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.search_for_flight input, .form-container select, .form-container button {
+    margin: 0 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search_for_flight button {
+    background-color: orange;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.search_for_flight button:hover {
+    background-color: #e69500;
 }
