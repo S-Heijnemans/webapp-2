@@ -22,44 +22,8 @@
     include "includes/index-includes/favorit.php";
     include "includes/index-includes/special_offer.php"
 ?>
-     
-    <div class="loadingbox">
-        <div class="test">
-            <div class="orb"></div>
-        </div>
-        <div class="test-1">
-            <div class="orb"></div>
-        </div>
-        <div class="test-2">
-            <div class="orb"></div>
-        </div>
-        <div class="test-3">
-            <div class="orb"></div>
-        </div>
-        <div class="test-4">
-            <div class="orb"></div>
-        </div>
-    </div>
-
-
-    <div class="boxtitel">
-    <h1 class="titel">Titel</h1>
-    </div>
-    <button onclick="warning();"> button</button>
-    <button onmouseover="yeet();"> yeet</button>
-
-    <form class='search-bar' action="pages/search.php" name='search' method="POST">
-                    <label>search:</label>
-                    <input type="text" name='search' placeholder="Search" required>
-                    <input type="submit" value="Search">
-                </form>
-    <div class="login-button">
-        <a href="pages/login.php">Login</a>
-    </div>
-
-    <a href="pages/trips.php">trips</a>
     <script src="./js/main.jsx"></script>
-    <a href="pages/user-dashboard.php">user-dashboard</a>
+    
 <?php 
     include "includes/footer.php";
 ?>
