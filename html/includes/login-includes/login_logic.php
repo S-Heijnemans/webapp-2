@@ -3,7 +3,7 @@ session_start();
 include '../conn.php';
 
 if(empty($_POST['username']) || empty($_POST['password'])) {
-    header("Location: login.php");
+    header("Location: ../../pages/login.php");
     exit();
 }
 
