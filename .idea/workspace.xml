@@ -39,7 +39,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;MaikTest&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main-test&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -76,6 +76,8 @@
       <workItem from="1718911319964" duration="3840000" />
       <workItem from="1718968672647" duration="23955000" />
       <workItem from="1719013135507" duration="12489000" />
+      <workItem from="1719094030711" duration="3602000" />
+      <workItem from="1719140601922" duration="20876000" />
     </task>
     <servers />
   </component>

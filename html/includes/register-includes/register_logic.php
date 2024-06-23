@@ -14,19 +14,16 @@ if (empty($username) || empty($password) ||
 }
 
 
-
 try {
     require_once '../conn.php';
 
     $stmt = $connection->prepare("INSERT INTO user (username, password, email)  
-VALUES(?, ?, ?) ");
+    VALUES(?, ?, ?) ");
     $stmt->execute([$username, $password, $email]);
     $user_id = $connection->lastInsertId();
 
-
-
     $stmt2 = $connection->prepare("INSERT INTO userdata (userdata_id, first_name, last_name)  
-VALUES(?, ?, ?) ");
+    VALUES(?, ?, ?) ");
     $stmt2->execute([$user_id, $firstname, $lastname]);
 
 } catch (PDOException $e) {
