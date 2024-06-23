@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Jun 22, 2024 at 04:01 AM
+-- Generation Time: Jun 23, 2024 at 09:58 PM
 -- Server version: 5.7.44
 -- PHP Version: 8.2.8
 
@@ -162,7 +162,7 @@ CREATE TABLE `flights` (
 --
 
 INSERT INTO `flights` (`flight_id`, `departure_airport`, `arrival_airport`, `flight_number`, `airline`, `flight_date`, `retour_date`, `price`) VALUES
-(1, 4, 2, '23njjkas', 'lokoti', '2024-06-27 00:00:00', '2024-06-30 00:00:00', 84.55);
+(1, 4, 2, '23njjkas', 'lokoti', '2024-06-27 12:00:00', '2024-06-30 08:00:00', 84.55);
 
 -- --------------------------------------------------------
 
