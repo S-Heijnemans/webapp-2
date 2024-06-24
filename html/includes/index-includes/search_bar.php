@@ -31,26 +31,30 @@ try {
 <body>
 <form class="search_for_flight" action="pages/trips.php" method="post">
 
-    <select name="starting_location" id="starting_location" onchange="disableSameDestination()">
+    <select name="starting_location" id="starting_location" required onchange="disableSameDestination()">
         <option value='' disabled selected>Start location</option>
-        <?php foreach ($results as $row): ?>
-            <option value="<?php echo($row['airport_id']); ?>">
-                <?php echo htmlspecialchars($row['airport_name'] . " - " .
-                    $row['city_name'] . " - " . $row['country_name']); ?>
-            </option>
-        <?php endforeach; ?>
+        <?php
+        foreach ($results as $row) {
+            echo '<option value="' . ($row['airport_id']) . ' " </option>';
+            echo htmlspecialchars($row['airport_name'] . " - " .
+                $row['city_name'] . " - " . $row['country_name']);
+            echo '</option>';
+        }
+
+        ?>
     </select>
-    <select name="destination" id="destination">
+    <select name="destination" id="destination" required>
         <option value='' disabled selected>Destination</option>
-        <?php foreach ($results as $row): ?>
-            <option value="<?php echo($row['airport_id']); ?>">
-                <?php echo htmlspecialchars($row['airport_name'] . " - " .
-                    $row['city_name'] . " - " . $row['country_name']); ?>
-            </option>
-        <?php endforeach; ?>
+        <?php
+        foreach ($results as $row) {
+            echo '<option value="' . ($row['airport_id']) . ' " </option>';
+            echo htmlspecialchars($row['airport_name'] . " - " .
+                $row['city_name'] . " - " . $row['country_name']);
+            echo '</option>';
+        } ?>
     </select>
-    <input type="date" name="start_date" id="startdate" value="">
-    <input type="date" name="end_date" id="enddate" onfocus="this.showPicker()" value="">
+    <input type="date" name="start_date" id="startdate" required value="">
+    <input type="date" name="end_date" id="enddate" required onfocus="this.showPicker()" value="">
     <button type="submit">Submit</button>
 </form>
 <script src="../../js/sript.js"></script>

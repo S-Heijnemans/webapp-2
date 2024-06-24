@@ -474,3 +474,55 @@ body {
 .search_for_flight button:hover {
     background-color: #e69500;
 }
+
+.flight-box-container {
+    width: 100%;
+    padding: 0px 100px 0px 100px;
+    margin: 20px 0px 20px 0px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.flight-box {
+    width: 300px;
+    height: 100px;
+    background-color: #3300FF;
+    border: black 1px solid;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+
+}
+
+.flight-data-box, .flight-data-box-to {
+    width: 130px;
+    height: 100%;
+    background-color: #00f000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    gap: 3px;
+
+}
+
+.flight-data-box-to {
+    width: 40px;
+    font-size: 11px;
+    justify-content: center;
+}
+
+.search-for-flight-box{
+    width: 100%;
+}
+.reset-query{
+    width: 100%;
+    padding: 0px 100px 0px 100px;
+    display: flex;
+    justify-content: right;
+
+}
+
+
