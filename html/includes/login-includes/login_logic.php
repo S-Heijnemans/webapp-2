@@ -4,7 +4,6 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
     exit();
 }
 if (!isset($_POST['username']) || !isset($_POST['password'])) {
-    var_dump("fuck you");
     header("Location: ../../pages/login.php");
     exit();
 }

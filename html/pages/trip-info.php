@@ -1,16 +1,34 @@
 <?php
-include "../includes/conn.php";
-$country_id = $_GET['country_id'];
-global $connection;
+if ( $_SERVER['REQUEST_METHOD'] != 'GET')
+{
+    header("Location:trips.php");
+}
+if (isset($_GET['country_id'])) {
+    $country_id = $_GET['country_id'];
+} else {
+    echo "Something went wrong!? returning back...";
 
-$sql = "SELECT c.*, i.image_url, i.image
+    header("Location: /trips.php");
+    exit();
+}
+
+try {
+    include "../includes/conn.php";
+
+    global $connection;
+
+    $sql = "SELECT c.*, i.image_url, i.image
     FROM countries as c
     RIGHT JOIN images as i ON i.country_id = c.country_id
     WHERE c.country_id = :country_id";
-$stmt = $connection->prepare($sql);
-$stmt->bindParam(":country_id", $country_id, PDO::PARAM_INT);
-$stmt->execute();
-$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $stmt = $connection->prepare($sql);
+    $stmt->bindParam(":country_id", $country_id, PDO::PARAM_INT);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    die('Query failed: ' . $e->getMessage());
+}
+
 ?>
 
 <!DOCTYPE html>
