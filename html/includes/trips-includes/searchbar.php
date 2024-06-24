@@ -33,7 +33,6 @@ try {
 <body>
 <div class="search-for-flight-box">
     <form class="search_for_flight" action="../../pages/trips.php" method="post">
-
         <select name="starting_location" id="starting_location" required onchange="disableSameDestination()">
             <option value='' disabled selected>Start location</option>
             <?php
@@ -50,7 +49,7 @@ try {
             <option value='' disabled selected>Destination</option>
             <?php
             foreach ($results as $row) {
-                echo '<option value="' . ($row['airport_id']) . '  "   </option>';
+                echo '<option value="' . ($row['airport_id']) . ' " </option>';
                 echo htmlspecialchars($row['airport_name'] . " - " .
                     $row['city_name'] . " - " . $row['country_name']);
                 echo '</option>';
