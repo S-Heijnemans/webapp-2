@@ -28,6 +28,7 @@ try {
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+
 <div class="user-dashboard-container">
     <div class="profile-user-dashboard-container">
         <div class="profile-title-user-dashboard">
