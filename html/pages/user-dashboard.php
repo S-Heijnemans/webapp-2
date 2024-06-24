@@ -2,7 +2,7 @@
 session_start();
 $userId = $_SESSION['user_id'];
 
-if (!isset($_SESSION['user'])) {
+if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit();
 }

@@ -3,15 +3,14 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
     header('Location: ../../index.php');
     exit();
 }
-if (empty($_POST['username']) || empty($_POST['password'])) {
+if (!isset($_POST['username']) || !isset($_POST['password'])) {
+    var_dump("fuck you");
     header("Location: ../../pages/login.php");
     exit();
 }
 session_start();
-
 $username = $_POST["username"];
 $password = md5($_POST["password"]);
-
 try {
     require_once '../conn.php';
 
@@ -25,17 +24,17 @@ try {
     die('Query failed: ' . $e->getMessage());
 }
 
+if ($user && isset($user['user_id'], $user['roles'])) {
+    $_SESSION['username'] = $username;
+    $_SESSION['user_id'] = $user['user_id'];
 
-if ($user && isset($user["user_id"], $user["roles"])) {
-    $_SESSION["username"] = $username;
-    $_SESSION["user_id"] = $user["user_id"];
-
-    if ($user["roles"] < 10) {
+    if ($user['roles'] < 10) {
         header("Location: ../../pages/dashboard.php");
     } else {
         header("Location: ../../pages/user-dashboard.php");
     }
 } else {
     header("Location: ../../pages/login.php?error=invalid_credentials");
+    exit();
 }
 ?>
