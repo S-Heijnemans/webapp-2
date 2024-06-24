@@ -28,30 +28,32 @@ try {
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
-<form class="search_for_flight" action="../../pages/trips.php" method="post">
+    <div class="container-searchbar">
+        <form class="search_for_flight" action="../../pages/trips.php" method="post">
 
-    <select name="starting_location" id="starting_location" onchange="disableSameDestination()">
-        <option value='' disabled selected>Start location</option>
-        <?php foreach ($results as $row): ?>
-            <option value="<?php echo($row['airport_id']); ?>">
-                <?php echo htmlspecialchars($row['airport_name'] . " - " .
-                    $row['city_name'] . " - " . $row['country_name']); ?>
-            </option>
-        <?php endforeach; ?>
-    </select>
-    <select name="destination" id="destination">
-        <option value='' disabled selected>Destination</option>
-        <?php foreach ($results as $row): ?>
-            <option value="<?php echo($row['airport_id']); ?>">
-                <?php echo htmlspecialchars($row['airport_name'] . " - " .
-                    $row['city_name'] . " - " . $row['country_name']); ?>
-            </option>
-        <?php endforeach; ?>
-    </select>
-    <input type="date" name="start_date" id="startdate" value="">
-    <input type="date" name="end_date" id="enddate" onfocus="this.showPicker()" value="">
-    <button type="submit">Submit</button>
-</form>
+            <select class="search-select-box-container" name="starting_location" id="starting_location" onchange="disableSameDestination()">
+                <option value='' disabled selected>Start location</option>
+                <?php foreach ($results as $row): ?>
+                    <option value="<?php echo($row['airport_id']); ?>">
+                        <?php echo htmlspecialchars($row['airport_name'] . " - " .
+                            $row['city_name'] . " - " . $row['country_name']); ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+            <select class="search-select-box-container" name="destination" id="destination">
+                <option value='' disabled selected>Destination</option>
+                <?php foreach ($results as $row): ?>
+                    <option value="<?php echo($row['airport_id']); ?>">
+                        <?php echo htmlspecialchars($row['airport_name'] . " - " .
+                            $row['city_name'] . " - " . $row['country_name']); ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+            <input class="search-select-box-container" type="date" name="start_date" id="startdate" value="">
+            <input class="search-select-box-container" type="date" name="end_date" id="enddate" onfocus="this.showPicker()" value="">
+            <button class="search-button-box" type="submit">Submit</button>
+        </form>
+    </div>
 
 <script src="../../js/sript.js"></script>
 </body>
