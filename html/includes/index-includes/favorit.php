@@ -9,7 +9,7 @@
 <body>
     <div class="favorit-box-index">
             <div class="title-favorit-box-index">
-                <H1>Our favorite destinations at the seaside  &#8594</H1>
+                <H1>Our favorite destinations at the seaside</H1>
             </div>
             <div class="pruducts-favorit-container-index">
                 <div class="pruduct-favorit-box-index">
