@@ -28,6 +28,7 @@ const initializeDate = () => {
     vertrek.setAttribute("min", today);
     vertrek.value = today;
     terugkomst.setAttribute("min", today);
+
 };
 
 initializeDate();

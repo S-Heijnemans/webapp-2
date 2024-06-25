@@ -55,6 +55,32 @@ try {
         <button class="search-button-box" type="submit">Submit</button>
     </form>
 </div>
+    <select name="starting_location" id="starting_location" required onchange="disableSameDestination()">
+        <option value='' disabled selected>Start location</option>
+        <?php
+        foreach ($results as $row) {
+            echo '<option value="' . ($row['airport_id']) . ' " </option>';
+            echo htmlspecialchars($row['airport_name'] . " - " .
+                $row['city_name'] . " - " . $row['country_name']);
+            echo '</option>';
+        }
+
+        ?>
+    </select>
+    <select name="destination" id="destination" required>
+        <option value='' disabled selected>Destination</option>
+        <?php
+        foreach ($results as $row) {
+            echo '<option value="' . ($row['airport_id']) . ' " </option>';
+            echo htmlspecialchars($row['airport_name'] . " - " .
+                $row['city_name'] . " - " . $row['country_name']);
+            echo '</option>';
+        } ?>
+    </select>
+    <input type="date" name="start_date" id="startdate" required value="">
+    <input type="date" name="end_date" id="enddate" required onfocus="this.showPicker()" value="">
+    <button type="submit">Submit</button>
+</form>
 <script src="../../js/sript.js"></script>
 </body>
 </html>
