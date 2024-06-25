@@ -2,7 +2,7 @@
 session_start();
 $userId = $_SESSION['user_id'];
 
-if (!isset($_SESSION['user'])) {
+if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit();
 }
@@ -28,6 +28,7 @@ try {
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+
 <div class="user-dashboard-container">
     <div class="profile-user-dashboard-container">
         <div class="profile-title-user-dashboard">

@@ -1,6 +1,24 @@
 <?php
+if (isset($_POST['reset-query-button'])) {
+    echo "<meta http-equiv='refresh' content='0'>";
+}
 try {
     require_once "../includes/conn.php";
+
+    function load_flights(string $from_airport, string $to_airport): bool
+    {
+        global $flights;
+
+        if($flights[$from_airport] == $to_airport){
+            return true;
+        }
+        else{
+            return false;
+        }
+
+    }
+
+
 
     $stmt = $connection->prepare("SELECT airport_name, airport_id, city_name, country_name 
     FROM (airports 
@@ -9,7 +27,7 @@ try {
     ORDER BY airport_name");
 
     $stmt->execute();
-    $results = $stmt->fetchAll();
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 } catch (PDOException $e) {
@@ -28,30 +46,40 @@ try {
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
-<form class="search_for_flight" action="../../pages/trips.php" method="post">
+<div class="search-for-flight-box">
+    <form class="search_for_flight" action="../../pages/trips.php" method="post">
 
-    <select name="starting_location" id="starting_location" onchange="disableSameDestination()">
-        <option value='' disabled selected>Start location</option>
-        <?php foreach ($results as $row): ?>
-            <option value="<?php echo($row['airport_id']); ?>">
-                <?php echo htmlspecialchars($row['airport_name'] . " - " .
-                    $row['city_name'] . " - " . $row['country_name']); ?>
-            </option>
-        <?php endforeach; ?>
-    </select>
-    <select name="destination" id="destination">
-        <option value='' disabled selected>Destination</option>
-        <?php foreach ($results as $row): ?>
-            <option value="<?php echo($row['airport_id']); ?>">
-                <?php echo htmlspecialchars($row['airport_name'] . " - " .
-                    $row['city_name'] . " - " . $row['country_name']); ?>
-            </option>
-        <?php endforeach; ?>
-    </select>
-    <input type="date" name="start_date" id="startdate" value="">
-    <input type="date" name="end_date" id="enddate" onfocus="this.showPicker()" value="">
-    <button type="submit">Submit</button>
-</form>
+        <select class="search-select-box-container" name="starting_location" id="starting_location" required onchange="disableSameDestination()">
+            <option value='' disabled selected>Start location</option>
+            <?php
+            foreach ($results as $row) {
+                echo '<option value="' . ($row['airport_id']) . ' " ' . '</option>';
+                echo htmlspecialchars($row['airport_name'] . " - " .
+                    $row['city_name'] . " - " . $row['country_name']);
+                echo '</option>';
+            }
+
+            ?>
+        </select>
+        <select class="search-select-box-container" name="destination" id="destination" required>
+            <option value='' disabled selected>Destination</option>
+            <?php
+            foreach ($results as $row) {
+                echo '<option value="' . ($row['airport_id']) . ' " </option>';
+                echo htmlspecialchars($row['airport_name'] . " - " .
+                    $row['city_name'] . " - " . $row['country_name']);
+                echo '</option>';
+            } ?>
+        </select>
+        <input class="search-select-box-container" type="date" name="start_date" id="startdate" required value="">
+        <input class="search-select-box-container" type="date" name="end_date" id="enddate" required onfocus="this.showPicker()" value="">
+        <button class="search-button-box" type="submit">Submit</button>
+    </form>
+    <form class="reset-query" action="../../pages/trips.php">
+        <button class="reset-button-trips" type="submit" id="reset-query-button">RESET filter</button>
+    </form>
+
+</div>
 
 <script src="../../js/sript.js"></script>
 </body>

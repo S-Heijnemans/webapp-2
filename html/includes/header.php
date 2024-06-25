@@ -1,28 +1,27 @@
-<!-- <div class="container">
-    <div class="header-box">
-        <img></img>
-    </div>
-    <div class="header-box">
-        <div class="header-home"></div>
-        <div class="header-home"></div>
-        <div class="header-home"></div>
-        <div class="header-home"></div>
-    </div>
-    <div class="header-box">
-        <img></img>
-        <div class="header-login"></div>
-    </div>
-</div> -->
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
 <header class="header">
-        <a class="logo" href="../index.php"></a>
+    <img src="../../assets/Logo.svg" alt="image not loading">
         <nav class="main-mav">
             <ul class="main-nav-list">
                 <li><a class="main-nav-link" href="../index.php">Home</a></li>
                 <li><a class="main-nav-link" href="../pages/about_us.php">About us</a></li>
-                <li><a class="main-nav-link" href="../pages/trips.php">Trips</a></li>
+                <li><a class="main-nav-link-blue" href="../pages/trips.php">Trips</a></li>
                 <li><a class="main-nav-link" href="../pages/contact.php">Contact</a></li>
-                <li><a class="main-nav-link" href="../pages/login.php">Login</a></li>
             </ul>
         </nav>
-    </header>
+        <div class="login-container-header">
+            <img src="../../assets/globe-header.png" alt="image not loading">
+            <a class="login-box" href="../pages/login.php">Login</a>
+        </div>
+    </div>
+</header>
+</body>
+</html>

@@ -4,7 +4,7 @@ try {
     require_once '../includes/conn.php';
 
     $userId = $_SESSION['user_id'];
-    if (!isset($_SESSION['user'])) {
+    if (!isset($_SESSION['user_id'])) {
         header("Location: login.php");
         exit();
     }
@@ -35,7 +35,7 @@ $rolename = match ($role['roles']) {
 include "../includes/dashboard-includes/dashNav.php";
 include "../includes/header.php";
 
-echo "Welcome to the dashboard, " . $_SESSION['user'] . ".  You are a: " . $rolename;
+echo "Welcome to the dashboard, " . $_SESSION['username'] . ".  You are a: " . $rolename;
 echo "<br>";
 
 // include "../includes/footer.php";
@@ -69,7 +69,7 @@ echo 'You are not logged in. <a href="login.php">Click here</a> to log in.';
 <form action="../includes/user-delete-includes/user_delete_logic.php" name='user_delete_logic' method="POST">
     <label>delete user</label>
     <input type="text" name='user_id' placeholder="id" required>
-    <input type="submit" value="register">
+    <input type="submit" value="Delete user">
 </form>
 
 
@@ -112,6 +112,28 @@ echo "</table>";
     "width=device-width, initial-scale=1.0">
     <title>Geeks for geeks Image Upload</title>
 </head>
+<form class='register_form' name="register_logic" action="../includes/register-includes/register_logic.php"
+      method="POST">
+    <div class="row">
+        <input type="text" placeholder="Username" name="username" required/>
+    </div>
+
+    <div class="row">
+        <input type="password" name="password" placeholder="Password" required id="myInput">
+    </div>
+    <div class="row">
+        <input type="email" placeholder="Email" name="email" required/>
+    </div>
+    <div class="row">
+        <input type="text" placeholder="First name" name="firstname" required/>
+    </div>
+    <div class="row">
+        <input type="text" placeholder="Last name" name="lastname" required/>
+    </div>
+    <div class="row">
+        <input type="submit" name="register" value='register'>
+    </div>
+</form>
 
 <body>
 <h1>Upload Images</h1>
