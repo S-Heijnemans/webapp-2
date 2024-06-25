@@ -405,6 +405,15 @@ body {
 
 /*                                          FIXME: trips page                                                                  */
 
+.reset-button-trips {
+    height: 35px;
+    width: 100px;
+    margin: 10px 25px 0px 0px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #000000;
+}
+
 .main-container-trips-flights {
     height: auto;
     width: 100%;
@@ -413,12 +422,14 @@ body {
     align-items: center;
     flex-direction: column;
 }
+
 .stile-line-flight {
     height: 2px;
     width: 90%;
     background-color: #000000;
     margin: 10px 0px 20px 0px;
 }
+
 .flight-box-container {
     width: 100%;
     padding: 0px 100px 0px 100px;
@@ -432,7 +443,8 @@ body {
 }
 
 .flight-box-item-container {
-    width: 45%;
+    width: 30%;
+    padding: 30px;
     background-color: #ffffff;
     margin: 20px 0px 20px 0px;
     border-radius: 8px;
@@ -458,7 +470,7 @@ body {
     flex-direction: column;
 }
 .flight-box-middle {
-    width: 80%;
+    width: 100%;
     margin-top: 2px;
     font-size: 24px;
     gap: 5px;
@@ -474,7 +486,7 @@ body {
 
 .button-flight-container {
     height: auto;
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;

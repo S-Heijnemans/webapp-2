@@ -76,7 +76,7 @@ try {
         <button class="search-button-box" type="submit">Submit</button>
     </form>
     <form class="reset-query" action="../../pages/trips.php">
-        <button type="submit" id="reset-query-button">RESET filter</button>
+        <button class="reset-button-trips" type="submit" id="reset-query-button">RESET filter</button>
     </form>
 
 </div>
