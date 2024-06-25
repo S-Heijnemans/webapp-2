@@ -29,8 +29,10 @@ try {
 <?php
 include "includes/header.php";
 ?>
+
 <?php
 include "includes/index-includes/hero.php";
+
 ?>
 <?php
 include "includes/index-includes/search_bar.php";

@@ -33,7 +33,8 @@ try {
 <body>
 <div class="search-for-flight-box">
     <form class="search_for_flight" action="../../pages/trips.php" method="post">
-        <select name="starting_location" id="starting_location" required onchange="disableSameDestination()">
+
+        <select class="search-select-box-container" name="starting_location" id="starting_location" required onchange="disableSameDestination()">
             <option value='' disabled selected>Start location</option>
             <?php
             foreach ($results as $row) {
@@ -42,19 +43,19 @@ try {
 
             ?>
         </select>
-        <select name="destination" id="destination" required>
+        <select class="search-select-box-container" name="destination" id="destination" required>
             <option value='' disabled selected>Destination</option>
             <?php
             foreach ($results as $row) {
                 echo '<option value="' . ($row['airport_id']) . '" >' . htmlspecialchars($row['airport_name'] . " - " . $row['city_name'] . " - " . $row['country_name']) . '</option>';
             } ?>
         </select>
-        <input type="date" name="start_date" id="startdate" required value="">
-        <input type="date" name="end_date" id="enddate" required onfocus="this.showPicker()" value="">
-        <button type="submit">Submit</button>
+        <input class="search-select-box-container" type="date" name="start_date" id="startdate" required value="">
+        <input class="search-select-box-container" type="date" name="end_date" id="enddate" required onfocus="this.showPicker()" value="">
+        <button class="search-button-box" type="submit">Submit</button>
     </form>
     <form class="reset-query" action="../../pages/trips.php">
-        <button type="submit" id="reset-query-button">RESET filter</button>
+        <button class="reset-button-trips" type="submit" id="reset-query-button">RESET filter</button>
     </form>
 
 </div>
