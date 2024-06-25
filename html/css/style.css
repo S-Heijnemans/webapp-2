@@ -224,6 +224,7 @@ body {
 .container-searchbar {
     height: 80px;
     width: 100%;
+    margin-top: 50px;
     gap: 5px;
     display: flex;
     flex-direction: column;
@@ -244,7 +245,7 @@ body {
 
 .search-button-box {
     height: 55px;
-    width: 200px;
+    width: 260px;
     background-color: #ff9900;
     margin-left: 20px;
     border-radius: 8px;
@@ -253,7 +254,7 @@ body {
 
 .search-select-box-container {
     height: 55px;
-    width: 15%;
+    width: 18%;
     background-color: #ffffff;
     border-radius: 8px;
     border: 1px solid #e7e7e7;
