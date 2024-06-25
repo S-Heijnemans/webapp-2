@@ -281,11 +281,11 @@ body {
 
 .header {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    background-color: #ff0000;
+    padding: 5rem;
     height: 9.6rem;
-    padding: 0 4.8rem;
     gap: 2rem;
 }
 
@@ -304,6 +304,25 @@ body {
 
 .main-nav-link-blue {
     color: #3300FF;
+}
+
+.login-container-header {
+    gap: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.login-box {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 400;
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }
 
 .container {
