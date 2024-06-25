@@ -44,13 +44,6 @@ echo "<br>";
 
 <a href='logout.php'>Click here to log out</a>
 
-<?php
-
-echo 'You are not logged in. <a href="login.php">Click here</a> to log in.';
-
-//include "../includes/add-product-includes/add_product.php";
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -88,13 +81,15 @@ echo "<table>
 <th> Name </th>
 <th> Update </th>
 <th> Delete </th>
+<th> Add</th>
 <tr>
 ";
 foreach ($data as $row) {
     echo "<tr>";
     echo "<td>" . $row['name'] . "</td>";
-    echo "<td>" . "<a href='../includes/product-update-includes/product_update.php?id='" . $row['accomodation_id'] . "<a>Update</a>" . "</td>";
-    echo "<td>" . "<a href='../includes/product-delete-includes/product_delete.php?id='" . $row['accomodation_id'] . "<a>Delete</a>" . "</td>";
+    echo "<td><a href='../includes/product-update-includes/product_update.php?id='" . $row['accomodation_id'] . "<a>Update</a></td>";
+    echo "<td><a href='../includes/product-delete-includes/product_delete.php?id='" . $row['accomodation_id'] . "<a>Delete</a></td>";
+    echo "<td><a href='../includes/product-includes/accomodation-form.php'<a>Accomodation</a></td>";
     echo "</tr>";
 }
 echo "</table>";
@@ -112,28 +107,7 @@ echo "</table>";
     "width=device-width, initial-scale=1.0">
     <title>Geeks for geeks Image Upload</title>
 </head>
-<form class='register_form' name="register_logic" action="../includes/register-includes/register_logic.php"
-      method="POST">
-    <div class="row">
-        <input type="text" placeholder="Username" name="username" required/>
-    </div>
 
-    <div class="row">
-        <input type="password" name="password" placeholder="Password" required id="myInput">
-    </div>
-    <div class="row">
-        <input type="email" placeholder="Email" name="email" required/>
-    </div>
-    <div class="row">
-        <input type="text" placeholder="First name" name="firstname" required/>
-    </div>
-    <div class="row">
-        <input type="text" placeholder="Last name" name="lastname" required/>
-    </div>
-    <div class="row">
-        <input type="submit" name="register" value='register'>
-    </div>
-</form>
 
 <body>
 <h1>Upload Images</h1>

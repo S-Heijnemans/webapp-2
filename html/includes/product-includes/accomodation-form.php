@@ -2,7 +2,7 @@
 try {
     require_once "../conn.php";
 
-    $stmt = $connection->prepare("SELECT ci.city_name, co.country_name
+    $stmt = $connection->prepare("SELECT ci.city_id, ci.city_name, co.country_name
     FROM city AS ci
     INNER JOIN countries AS co ON ci.country_id = co.country_id");
 
@@ -27,70 +27,83 @@ try {
 <body>
 <form class='accomodation-form' name="accomodation-form" action="accomodation-form-controller.php" method="POST">
     <div class="row">
-        <select name="city-name" required>
+        <label>City location:</label>
+        <select name="city_id" required>
             <option value='' disabled selected>Choose city</option>
             <?php
             foreach ($city_name as $city) {
-                echo '<option value="' . ($city['city_id']) . ' " ' . '</option>';
-                echo htmlspecialchars($city['city_name'] . " - " . $city['country_name']);
+                echo "<option value='" . $city['city_id'] . "'" . "> ";
+                echo htmlspecialchars($city['city_name'] . " - " . $city['country_name'] . $city["city_id"]);
                 echo '</option>';
             }
-
             ?>
         </select>
     </div>
 
+
     <div class="row">
-        <input type="number" name="max-tenants" placeholder="Max Tenants" required>
+        <label>Max tenants</label>
+        <input type="number" name="max_tenants" min="1" max="99" required>
     </div>
     <div class="row">
-        <input type="number" placeholder="Email" name="email" required/>
+        <label>Beds per room</label>
+        <input type="number" name="beds_per_room" min="1" max="9" required/>
     </div>
     <div class="row">
-        <input type="number" placeholder="First name" name="firstname" min="0"  max="10" required/>
+        <label>Amount of rooms</label>
+        <input type="number" name="rooms" min="1" max="99" required/>
     </div>
     <div class="row">
-        <input type="number" placeholder="Last name" name="lastname" required/>
+        <label>Amount of bathrooms</label>
+        <input type="number" name="bathrooms" min="1" max="9" required/>
     </div>
     <div class="row">
-        <input type="checkbox" name="register" value='register'>
+        <label>Amount of toilets</label>
+        <input type="number" name="amount_of_toilets" value='' min="1" max="9" required>
     </div>
     <div class="row">
-        <input type="checkbox" name="register" value='register'>
+        <label>Has wifi</label>
+        <input type="checkbox" name="has_wifi" value='0'>
     </div>
     <div class="row">
-        <input type="number" name="register" value='register'>
+        <label>Pool is nearby</label>
+        <input type="checkbox" name="pool_nearby" value='0'>
     </div>
     <div class="row">
-        <input type="checkbox" name="register" value='register'>
+        <label>Is accessible</label>
+        <input type="checkbox" name="accessibility" value='0'>
     </div>
     <div class="row">
-        <input type="checkbox" name="register" value='register'>
-    </div>
-<!--    <div class="row">-->
-<!--        <input type="number" name="register" value='register'>-->
-<!--    </div>-->
-<!--    <div class="row">-->
-<!--        <input type="number" name="register" value='register'>-->
-<!--    </div>-->
-    <div class="row">
-        <input type="text" name="register" value='register'>
+        <label>Has airco</label>
+        <input type="checkbox" name="airco" value='0'>
     </div>
     <div class="row">
-        <input type="range" name="register" value='register'>
+        <label>Has restaurant</label>
+        <input type="checkbox" name="restaurant" value='0'>
     </div>
     <div class="row">
-        <input type="text" name="register" value='register'>
+        <label>Accomodation name</label>
+        <input type="text" name="name" value='' required>
     </div>
     <div class="row">
-        <input type="text" name="register" value='register'>
+        <label>Price per night</label>
+        <input type="number" name="price_per_night" value='' step="0.01" min="0.00" max="10000000000.00" required>
     </div>
     <div class="row">
-        <input type="image" name="register" value='register'>
+        <label>Adress</label>.
+        <input type="text" name="adress" value='' required>
+    </div>
+    <div class="row">
+        <label>Description</label>
+        <input type="text" name="description" value='' required>
+    </div>
+    <div class="row">
+        <label>image to upload:</label>
+        <input type="file" name="fileToUpload" id="fileToUpload">
     </div>
     <br>
     <div class="row">
-        <input type="submit" name="register" value='register'>
+        <input type="submit" name="submit" value='Add accomodation'>
     </div>
 
 </form>

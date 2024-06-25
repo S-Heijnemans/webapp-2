@@ -10,7 +10,7 @@ $lastname = htmlspecialchars($_POST["lastname"]);
 if (empty($username) || empty($password) ||
     empty($email) || empty($firstname) || empty($lastname)) {
     header("Location: ../register.php");
-    die();
+    die("Empty fields!");
 }
 
 function is_username_taken(string $username): bool
