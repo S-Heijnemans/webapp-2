@@ -20,10 +20,13 @@ try {
     }
     global $start_date, $end_date, $connection;
     try {
-        $query = "SELECT f.*, da.airport_name as da_airport_name, aa.airport_name as aa_airport_name
-                  FROM flights AS f
-                  JOIN airports AS da ON f.departure_airport = da.airport_id
-                  JOIN airports AS aa ON f.arrival_airport = aa.airport_id";
+        $query = "SELECT f.*, da.airport_name as da_airport_name, aa.airport_name as aa_airport_name, ci.city_name, c.country_name, i.image_url, i.image
+         FROM flights AS f
+         JOIN airports AS da ON f.departure_airport = da.airport_id
+         JOIN airports AS aa ON f.arrival_airport = aa.airport_id
+         LEFT JOIN city AS ci ON aa.city_id = ci.city_id
+         LEFT JOIN images AS i ON i.city_id = ci.city_id
+         LEFT JOIN countries AS c ON ci.country_id = c.country_id";
 
         if ($return_query) {
             $query .= " WHERE f.departure_airport = :starting_location 
@@ -67,53 +70,61 @@ try {
 <div class="flight-box-container">
 
     <?php
-    if (!empty($flights)) {
-        foreach ($flights as $flight) {
-            $flight_start_date = date('Y-m-d', strtotime($flight['flight_date']));
-            $flight_start_time = date('H:i', strtotime($flight['flight_date']));
-            $flight_end_date = date('Y-m-d', strtotime($flight['retour_date']));
-            $flight_end_time = date('H:i', strtotime($flight['retour_date']));
 
-            echo "<div class='flight-box'>";
-            echo "<div class='flight-data-box'>";
-            echo "<div>" . htmlspecialchars($flight['da_airport_name']) . "</div>";
-            echo "<div>" . htmlspecialchars($flight_start_date) . ", </div>";
-            echo "<div>" . htmlspecialchars($flight_start_time) . "</div>";
-            echo "</div>";
-            echo "<div class='flight-data-box-to'>";
-            echo "<h2> --> </h2>";
-            echo "</div>";
-            echo "<div class='flight-data-box'>";
-            echo "<div>" . htmlspecialchars($flight['aa_airport_name']) . "</div>";
-            echo "<div>" . htmlspecialchars($flight_end_date) . " , </div>";
-            echo "<div>" . htmlspecialchars($flight_end_time) . "</div>";
-            echo "</div>";
-            echo "</div>";
-        }
-    } else {
-        foreach ($flights as $flight) {
-            $flight_start_date = date('Y-m-d', strtotime($flight['flight_date']));
-            $flight_start_time = date('H:i', strtotime($flight['flight_date']));
-            $flight_end_date = date('Y-m-d', strtotime($flight['retour_date']));
-            $flight_end_time = date('H:i', strtotime($flight['retour_date']));
+    foreach ($flights as $flight) {
+        $flight_start_date = date('Y-m-d', strtotime($flight['flight_date']));
+        $flight_start_time = date('H:i', strtotime($flight['flight_date']));
+        $flight_end_date = date('Y-m-d', strtotime($flight['retour_date']));
+        $flight_end_time = date('H:i', strtotime($flight['retour_date']));
 
-            echo "<div class='flight-box'>";
-            echo "<div class='flight-data-box'>";
-            echo "<div>" . htmlspecialchars($flight['da_airport_name']) . "</div>";
-            echo "<div>" . htmlspecialchars($flight_start_date) . ", </div>";
-            echo "<div>" . htmlspecialchars($flight_start_time) . "</div>";
-            echo "</div>";
-            echo "<div class='flight-data-box-to'>";
-            echo "<h2> --> </h2>";
-            echo "</div>";
-            echo "<div class='flight-data-box'>";
-            echo "<div>" . htmlspecialchars($flight['aa_airport_name']) . "</div>";
-            echo "<div>" . htmlspecialchars($flight_end_date) . " , </div>";
-            echo "<div>" . htmlspecialchars($flight_end_time) . "</div>";
-            echo "</div>";
-            echo "</div>";
-        }
+
+        echo "<div class='flight-box-container'>";
+
+        echo "<div class='flight-box-top'>";
+
+        echo "<image class='country-image'>";
+        echo "<img src='" . htmlspecialchars($flight['image_url']) . "'" . "alt='" . htmlspecialchars($flight['image']) . "'" . ">";
+        echo "</image>";
+
+        echo "<div class='flight-box-middle'>";
+
+        echo "<p>" . htmlspecialchars($flight['city_name']) . ", " . htmlspecialchars($flight['country_name']) . "</p>";
+
+        echo "<p>" . htmlspecialchars($flight['price']) . "€" . "</p>";
+
+        echo "</div>";
+
+        echo "</div>";
+
+        echo "<div class='flight-box'>";
+
+        echo "<div class='flight-data-box'>";
+
+        echo "<p>" . htmlspecialchars($flight['da_airport_name']) . "</p>";
+        echo "<p>" . htmlspecialchars($flight_start_date) . ", </p>";
+        echo "<p>" . htmlspecialchars($flight_start_time) . "</p>";
+
+        echo "</div>";
+
+        echo "<div class='flight-data-box-to'>";
+
+        echo "<h2> --> </h2>";
+
+        echo "</div>";
+
+        echo "<div class='flight-data-box'>";
+
+        echo "<p>" . htmlspecialchars($flight['aa_airport_name']) . "</p>";
+        echo "<p>" . htmlspecialchars($flight_end_date) . " , </p>";
+        echo "<p>" . htmlspecialchars($flight_end_time) . "</p>";
+
+        echo "</div>";
+
+        echo "</div>";
+
+        echo "</div>";
     }
+
     ?>
 </div>
 </div>
