@@ -78,49 +78,67 @@ try {
         $flight_end_time = date('H:i', strtotime($flight['retour_date']));
 
 
-        echo "<div class='flight-box-container'>";
+        echo "<div class='flight-box-item-container'>";
 
-        echo "<div class='flight-box-top'>";
+            echo "<div class='flight-box-top'>";
 
-        echo "<image class='country-image'>";
-        echo "<img src='" . htmlspecialchars($flight['image_url']) . "'" . "alt='" . htmlspecialchars($flight['image']) . "'" . ">";
-        echo "</image>";
+                echo "<image class='country-image'>";
+                    echo "<img src='" . htmlspecialchars($flight['image_url']) . "'" . "alt='" . htmlspecialchars($flight['image']) . "'" . ">";
+                echo "</image>";
 
-        echo "<div class='flight-box-middle'>";
+                echo "<div class='flight-box-middle'>";
 
-        echo "<p>" . htmlspecialchars($flight['city_name']) . ", " . htmlspecialchars($flight['country_name']) . "</p>";
+                    echo "<p>" . htmlspecialchars($flight['city_name']) . ", " . htmlspecialchars($flight['country_name']) . "</p>";
+                    echo "<div class='flight-box-prise-middle'>";
+                        echo "<p>" . htmlspecialchars($flight['price']) . "€" . "</p>";
+                    echo "</div>";
+                echo "</div>";
 
-        echo "<p>" . htmlspecialchars($flight['price']) . "€" . "</p>";
+            echo "</div>";
 
-        echo "</div>";
+            echo "<div class='style-box-flight-box'>";
 
-        echo "</div>";
+            echo "</div>";
 
-        echo "<div class='flight-box'>";
+            echo "<div class='flight-box'>";
 
-        echo "<div class='flight-data-box'>";
+                echo "<div class='flight-data-box'>";
 
-        echo "<p>" . htmlspecialchars($flight['da_airport_name']) . "</p>";
-        echo "<p>" . htmlspecialchars($flight_start_date) . ", </p>";
-        echo "<p>" . htmlspecialchars($flight_start_time) . "</p>";
+                    echo "<p>" . htmlspecialchars($flight['da_airport_name']) . "</p>";
+                    echo "<p>" . htmlspecialchars($flight_start_date) . ", </p>";
+                    echo "<p>" . htmlspecialchars($flight_start_time) . "</p>";
 
-        echo "</div>";
+                echo "</div>";
 
-        echo "<div class='flight-data-box-to'>";
+                echo "<div class='flight-data-box-to'>";
 
-        echo "<h2> --> </h2>";
+                 echo "<h2> --> </h2>";
 
-        echo "</div>";
+                echo "</div>";
 
-        echo "<div class='flight-data-box'>";
+                echo "<div class='flight-data-box'>";
 
-        echo "<p>" . htmlspecialchars($flight['aa_airport_name']) . "</p>";
-        echo "<p>" . htmlspecialchars($flight_end_date) . " , </p>";
-        echo "<p>" . htmlspecialchars($flight_end_time) . "</p>";
+                    echo "<p>" . htmlspecialchars($flight['aa_airport_name']) . "</p>";
+                    echo "<p>" . htmlspecialchars($flight_end_date) . " , </p>";
+                    echo "<p>" . htmlspecialchars($flight_end_time) . "</p>";
 
-        echo "</div>";
+                echo "</div>";
 
-        echo "</div>";
+            echo "</div>";
+
+            echo "<div class='style-box-flight-box'>";
+
+            echo "</div>";
+
+            echo "<div class='button-flight-container'>";
+
+                echo "<div class='button-flight-box'>";
+
+                    echo "<a> Vieuw detail </a>";
+                    
+                echo "</div>";
+
+            echo "</div>";
 
         echo "</div>";
     }
