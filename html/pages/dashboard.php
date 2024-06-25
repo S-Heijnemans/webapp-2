@@ -42,28 +42,28 @@ echo "<br>";
 ?>
 
 
-<a href='logout.php'>Click here to log out</a>
+    <a href='logout.php'>Click here to log out</a>
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
 
 
-</body>
-</html>
+    </body>
+    </html>
 
 
-<form action="../includes/user-delete-includes/user_delete_logic.php" name='user_delete_logic' method="POST">
-    <label>delete user</label>
-    <input type="text" name='user_id' placeholder="id" required>
-    <input type="submit" value="Delete user">
-</form>
+    <form action="../includes/user-delete-includes/user_delete_logic.php" name='user_delete_logic' method="POST">
+        <label>delete user</label>
+        <input type="text" name='user_id' placeholder="id" required>
+        <input type="submit" value="Delete user">
+    </form>
 
 
 <?php
@@ -98,81 +98,77 @@ echo "</table>";
 ?>
 
 
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content=
-    "width=device-width, initial-scale=1.0">
-    <title>Geeks for geeks Image Upload</title>
-</head>
-
-
-<body>
-<h1>Upload Images</h1>
-
-<form method='post' action=''
-      enctype='multipart/form-data'>
-    <input type='file' name='files[]' multiple/>
-    <input type='submit' value='Submit' name='submit'/>
-</form>
-
-<a href="../assets/uploads/view.php">|View Uploads|</a>
-</body>
-
-</html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content=
+        "width=device-width, initial-scale=1.0">
+        <title>Geeks for geeks Image Upload</title>
+    </head>
 
 
+    <body>
+    <h1>Upload Images</h1>
 
+    <form method='post' action=''
+          enctype='multipart/form-data'>
+        <input type='file' name='files[]' multiple/>
+        <input type='submit' value='Submit' name='submit'/>
+    </form>
+
+    <a href="../assets/uploads/view.php">|View Uploads|</a>
+    </body>
+
+    </html>
 
 
 <?php
 include "../includes/conn.php";
- 
-if(isset($_POST['submit'])) {
- 
+
+if (isset($_POST['submit'])) {
+
     // Count total files
     $countfiles = count($_FILES['files']['name']);
- 
+
     // Prepared statement
     $query = "INSERT INTO images (image_url,image) VALUES(?,?)";
- 
+
     $statement = $connection->prepare($query);
- 
+
     // Loop all files
-    for($i = 0; $i < $countfiles; $i++) {
- 
+    for ($i = 0; $i < $countfiles; $i++) {
+
         // File name
         $filename = $_FILES['files']['name'][$i];
-   
+
         // Location
-        $target_file1 = '../assets/'.$filename;
-        $target_file = '/assets/'.$filename;
-   
+        $target_file1 = '../assets/' . $filename;
+        $target_file = '/assets/' . $filename;
+
         // file extension
         $file_extension = pathinfo(
             $target_file, PATHINFO_EXTENSION);
-           
+
         $file_extension = strtolower($file_extension);
-   
+
         // Valid image extension
-        $valid_extension = array("png","jpeg","jpg");
-   
-        if(in_array($file_extension, $valid_extension)) {
- 
+        $valid_extension = array("png", "jpeg", "jpg");
+
+        if (in_array($file_extension, $valid_extension)) {
+
             // Upload file
-            if(move_uploaded_file(
+            if (move_uploaded_file(
                 $_FILES['files']['tmp_name'][$i],
                 $target_file1)
             ) {
-            // Execute query
-            $statement->execute(
-                array($filename,$target_file));
+                // Execute query
+                $statement->execute(array($target_file, $filename));
             }
         }
     }
-   
+
     echo "File upload successfully";
 }
 ?>

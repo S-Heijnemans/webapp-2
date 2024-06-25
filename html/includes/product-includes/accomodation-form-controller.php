@@ -19,10 +19,52 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Ensure connection and city_id are available for the upload_image function
         $city_id = $_POST['city_id'];
-        if (!empty($_POST['fileToUpload'])) {
-            include_once "accomodation-form-model.php";
-            upload_image($connection, $city_id);
+
+        function upload_image($connection, $city_id): void
+        {
+            // Count total files
+            $countfiles = count($_FILES['files']['name']);
+
+            // Prepared statement
+            $query = "INSERT INTO images (image_url,image, city_id) VALUES(?,?,?)";
+
+            $statement = $connection->prepare($query);
+
+            // Loop all files
+            for ($i = 0; $i < $countfiles; $i++) {
+
+                // File name
+                $filename = $_FILES['files']['name'][$i];
+
+                // Location
+                $target_file1 = '../../assets/' . $filename;
+                $target_file = '/assets/' . $filename;
+
+                // file extension
+                $file_extension = pathinfo(
+                    $target_file, PATHINFO_EXTENSION);
+
+                $file_extension = strtolower($file_extension);
+
+                // Valid image extension
+                $valid_extension = array("png", "jpeg", "jpg");
+
+                if (in_array($file_extension, $valid_extension)) {
+
+                    // Upload file
+                    if (move_uploaded_file(
+                        $_FILES['files']['tmp_name'][$i],
+                        $target_file1)
+                    ) {
+                        // Execute query
+                        $statement->execute(array($target_file, $filename, $city_id));
+                    }
+                }
+            }
+
+            echo "File upload successfully";
         }
+
 
         // Initialize checkbox values
         $has_wifi = isset($_POST['has_wifi']) ? 1 : 0;
@@ -61,6 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bindParam(':city_id', $city_id, PDO::PARAM_INT);
 
         $stmt->execute();
+        upload_image($connection, $city_id);
 
 //        header("Location: ../../pages/dashboard.php");
 //        die("Successfully added a new accommodation!");
