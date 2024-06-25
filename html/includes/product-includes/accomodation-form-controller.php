@@ -1,5 +1,7 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    session_start();
+    $_SESSION['form_error'] = ['form_errors'];
 
     // Check for required fields
     $requiredFields = ['city_id', 'max_tenants', 'beds_per_room', 'rooms', 'bathrooms', 'amount_of_toilets', 'name', 'price_per_night', 'adress', 'description'];
@@ -60,8 +62,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $stmt->execute();
 
-        header("Location: ../../pages/dashboard.php");
-        die("Successfully added a new accommodation!");
+//        header("Location: ../../pages/dashboard.php");
+//        die("Successfully added a new accommodation!");
 
     } catch (PDOException $e) {
         die('Query failed: ' . $e->getMessage());
