@@ -242,6 +242,11 @@ body {
     border-radius: 8px;   
 }
 
+.country-image {
+    max-width: 250px;
+    max-height: 60px;
+}
+
 .search-button-box {
     height: 55px;
     width: 260px;
