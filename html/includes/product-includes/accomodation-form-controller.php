@@ -105,8 +105,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->execute();
         upload_image($connection, $city_id);
 
-//        header("Location: ../../pages/dashboard.php");
-//        die("Successfully added a new accommodation!");
+        header("Location: ../../pages/dashboard.php");
+        die("Successfully added a new accommodation!");
 
     } catch (PDOException $e) {
         die('Query failed: ' . $e->getMessage());
