@@ -14,13 +14,13 @@ include "../includes/register-includes/register_controller.php";
 <?php
 include "../includes/header.php";
 ?>
-<main class="main">
-    <div class="log-in-title">
-        <h1>Log in</h1>
-    </div>
-    <div class="login-container">
+    <main class="main">
+        <div class="login-container">
+            <div class="image-container">
+                <img src="../assets/img-login.png" alt="Hot air balloons">
+            </div>
         <div class="login">
-            <form class='register_form' name="register_logic" action="../includes/register-includes/register_logic.php"
+            <form class='form-login-tabel register-form' name="register_logic" action="../includes/register-includes/register_logic.php"
                   method="POST">
                 <div class="row">
                     <input type="text" placeholder="Username" name="username" required/>
