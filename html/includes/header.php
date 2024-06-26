@@ -1,6 +1,6 @@
 <?php
-session_start();
-$_SESSION['user_name'] = ['user_name'];
+//session_start();
+//$_SESSION['user_name'] = ['user_name'];
 
 ?>
 <!DOCTYPE html>

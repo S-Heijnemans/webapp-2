@@ -74,8 +74,10 @@ try {
     <div class="flight-box-container">
 
         <?php
-
+        $i = 0;
+        global $city_name;
         foreach ($flights as $flight) {
+
             $flight_start_date = date('Y-m-d', strtotime($flight['flight_date']));
             $flight_start_time = date('H:i', strtotime($flight['flight_date']));
             $flight_end_date = date('Y-m-d', strtotime($flight['retour_date']));
@@ -87,7 +89,7 @@ try {
             echo "<div class='flight-box-top'>";
 
             echo "<image class='country-image'>";
-            echo "<img src='" . htmlspecialchars($flight['image_url']) . "'" . "alt='" . htmlspecialchars($flight['image']) . "'" . ">";
+            echo "<img src='" . htmlspecialchars($flights[$i]['image_url']) . "'" . "alt='" . htmlspecialchars($flights[$i]['image']) . "'" . ">";
             echo " </image>";
 
             echo "<div class='flight-box-middle'>";
@@ -122,15 +124,23 @@ try {
 
             echo "</div>";
 
+//            echo "<form class='button-flight-box-color' action='../booking-logic.php' method='post'>";
+//
+////            echo "<a href='includes/booking-logic.php'> Book now </a>";
+//            echo "<input type='button' name='" . $city_name . " '" . "><a href='../includes/booking-logic.php'> Book now </a></";
+//
+//            echo "<input type='submit' name='submit'>";
+
+            echo "</div>";
+
             echo "<div class='button-flight-box-color'>";
 
             echo "<a> Book now </a>";
 
+            echo "</form>";
             echo "</div>";
 
-            echo "</div>";
-
-            echo "</div>";
+            $i = $i + 1;
         }
 
         ?>

@@ -117,7 +117,7 @@ echo "</table>";
     </html>
 
 
-
+<?php
 // include "../includes/conn.php";
 //
 //if (isset($_POST['submit'])) {
@@ -165,3 +165,4 @@ echo "</table>";
 //    echo "File upload successfully";
 //}
 //
+?>
