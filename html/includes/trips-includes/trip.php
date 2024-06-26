@@ -68,8 +68,8 @@ try {
 </head>
 <body>
 <div class="main-container-trips-flights">
-<div class="title-flight-box">
-         <h1>Trips</h1>
+    <div class="title-flight-box">
+        <h1>Trips</h1>
     </div>
     <div class="flight-box-container">
 
@@ -84,64 +84,63 @@ try {
 
             echo "<div class='flight-box-item-container'>";
 
-                echo "<div class='flight-box-top'>";
+            echo "<div class='flight-box-top'>";
 
-                    echo "<image class='country-image'>";
-                        echo "<img src='" . htmlspecialchars($flight['image_url']) . "'" . "alt='" . htmlspecialchars($flight['image']) . "'" . ">";
-                    echo "</image>";
+            echo "<image class='country-image'>";
+            echo "<img src='" . htmlspecialchars($flight['image_url']) . "'" . "alt='" . htmlspecialchars($flight['image']) . "'" . ">";
+            echo " </image>";
 
-                    echo "<div class='flight-box-middle'>";
+            echo "<div class='flight-box-middle'>";
 
-                        echo "<p>" . htmlspecialchars($flight['city_name']) . ", " . htmlspecialchars($flight['country_name']) . "</p>";
-                        echo "<div class='flight-box-prise-middle'>";
-                            echo "<p>" . htmlspecialchars($flight['price']) . "€" . "</p>";
-                        echo "</div>";
-                    echo "</div>";
+            echo "<p>" . htmlspecialchars($flight['city_name']) . ", " . htmlspecialchars($flight['country_name']) . "</p>";
+            echo "<div class='flight-box-prise-middle'>";
+            echo "<p>" . htmlspecialchars($flight['price']) . "€" . "</p>";
+            echo "</div>";
+            echo "</div>";
 
-                echo "</div>";
+            echo "</div>";
 
-                echo "<div class='style-box-flight-box'>";
+            echo "<div class='style-box-flight-box'>";
 
-                echo "</div>";
+            echo "</div>";
 
-                echo "<div class='flight-box'>";
+            echo "<div class='flight-box'>";
 
-                    echo "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu ante placerat, pellentesque metus a, imperdiet eros. Integer urna urna.";
+            echo "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu ante placerat, pellentesque metus a, imperdiet eros. Integer urna urna.";
 
-                echo "</div>";
+            echo "</div>";
 
-                echo "<div class='style-box-flight-box'>";
+            echo "<div class='style-box-flight-box'>";
 
-                echo "</div>";
+            echo "</div>";
 
-                echo "<div class='button-flight-container'>";
+            echo "<div class='button-flight-container'>";
 
-                    echo "<div class='button-flight-box'>";
+            echo "<div class='button-flight-box'>";
 
-                        echo "<a> View detail </a>";
-                        
-                    echo "</div>";
+            echo "<a> View detail </a>";
 
-                    echo "<div class='button-flight-box-color'>";
+            echo "</div>";
 
-                        echo "<a> Book now </a>";
-                        
-                    echo "</div>";
+            echo "<div class='button-flight-box-color'>";
 
-                echo "</div>";
+            echo "<a> Book now </a>";
+
+            echo "</div>";
+
+            echo "</div>";
 
             echo "</div>";
         }
 
         ?>
     </div>
-
 
 
     <div class="stile-line-flight"></div>
-        
+
     <div class="title-flight-box">
-         <h1>Flights</h1>
+        <h1>Flights</h1>
     </div>
     <div class="flight-box-container">
 
@@ -156,78 +155,78 @@ try {
 
             echo "<div class='flight-box-item-container'>";
 
-                echo "<div class='flight-box-top'>";
+            echo "<div class='flight-box-top'>";
 
-                    echo "<image class='country-image'>";
-                        echo "<img src='" . htmlspecialchars($flight['image_url']) . "'" . "alt='" . htmlspecialchars($flight['image']) . "'" . ">";
-                    echo "</image>";
+            echo "<image class='country-image'>";
+            echo "<img src='" . htmlspecialchars($flight['image_url']) . "'" . "alt='" . htmlspecialchars($flight['image']) . "'" . ">";
+            echo "</image>";
 
-                    echo "<div class='flight-box-middle'>";
+            echo "<div class='flight-box-middle'>";
 
-                        echo "<p>" . htmlspecialchars($flight['city_name']) . ", " . htmlspecialchars($flight['country_name']) . "</p>";
-                        echo "<div class='flight-box-prise-middle'>";
-                            echo "<p>" . htmlspecialchars($flight['price']) . "€" . "</p>";
-                        echo "</div>";
-                    echo "</div>";
+            echo "<p>" . htmlspecialchars($flight['city_name']) . ", " . htmlspecialchars($flight['country_name']) . "</p>";
+            echo "<div class='flight-box-prise-middle'>";
+            echo "<p>" . htmlspecialchars($flight['price']) . "€" . "</p>";
+            echo "</div>";
+            echo "</div>";
 
-                echo "</div>";
+            echo "</div>";
 
-                echo "<div class='style-box-flight-box'>";
+            echo "<div class='style-box-flight-box'>";
 
-                echo "</div>";
+            echo "</div>";
 
-                echo "<div class='flight-box'>";
+            echo "<div class='flight-box'>";
 
-                    echo "<div class='flight-data-box'>";
+            echo "<div class='flight-data-box'>";
 
-                        echo "<p>" . htmlspecialchars($flight['da_airport_name']) . "</p>";
-                        echo "<p>" . htmlspecialchars($flight_start_date) . ", </p>";
-                        echo "<p>" . htmlspecialchars($flight_start_time) . "</p>";
+            echo "<p>" . htmlspecialchars($flight['da_airport_name']) . "</p>";
+            echo "<p>" . htmlspecialchars($flight_start_date) . ", </p>";
+            echo "<p>" . htmlspecialchars($flight_start_time) . "</p>";
 
-                    echo "</div>";
+            echo "</div>";
 
-                    echo "<div class='flight-data-box-to'>";
+            echo "<div class='flight-data-box-to'>";
 
-                    echo "<h2> --> </h2>";
+            echo "<h2> --> </h2>";
 
-                    echo "</div>";
+            echo "</div>";
 
-                    echo "<div class='flight-data-box'>";
+            echo "<div class='flight-data-box'>";
 
-                        echo "<p>" . htmlspecialchars($flight['aa_airport_name']) . "</p>";
-                        echo "<p>" . htmlspecialchars($flight_end_date) . " , </p>";
-                        echo "<p>" . htmlspecialchars($flight_end_time) . "</p>";
+            echo "<p>" . htmlspecialchars($flight['aa_airport_name']) . "</p>";
+            echo "<p>" . htmlspecialchars($flight_end_date) . " , </p>";
+            echo "<p>" . htmlspecialchars($flight_end_time) . "</p>";
 
-                    echo "</div>";
+            echo "</div>";
 
-                echo "</div>";
+            echo "</div>";
 
-                echo "<div class='style-box-flight-box'>";
+            echo "<div class='style-box-flight-box'>";
 
-                echo "</div>";
+            echo "</div>";
 
-                echo "<div class='button-flight-container'>";
+            echo "<div class='button-flight-container'>";
 
-                    echo "<div class='button-flight-box'>";
+            echo "<div class='button-flight-box'>";
 
-                        echo "<a> View detail </a>";
-                        
-                    echo "</div>";
+            echo "<a> View detail </a>";
 
-                    echo "<div class='button-flight-box-color'>";
+            echo "</div>";
 
-                        echo "<a> Book now </a>";
-                        
-                    echo "</div>";
+            echo "<div class='button-flight-box-color'>";
 
-                echo "</div>";
+            echo "<a> Book now </a>";
+
+            echo "</div>";
+
+            echo "</div>";
 
             echo "</div>";
         }
 
         ?>
     </div>
-    </div>
+</div>
 </div>
 </body>
 </html>
