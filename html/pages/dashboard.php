@@ -4,27 +4,29 @@ try {
     require_once '../includes/conn.php';
 
     $userId = $_SESSION['user_id'];
-    if (!isset($_SESSION['user_id'])) {
+    $username = $_SESSION['username'];
+    $role = $_SESSION['user_roles'];
+
+
+
+    if (!isset($userId)) {
         header("Location: login.php");
         exit();
     }
 
-    $stmt = $connection->prepare("SELECT roles FROM user WHERE user_id = $userId");
-    $stmt->execute();
-    $role = $stmt->fetch();
 
 } catch (PDOException $e) {
     die('Query failed: ' . $e->getMessage());
 
 }
 
-if ($role['roles'] > 9) {
+if (!$role < 10) {
     header("Location: user-dashboard.php");
     exit();
 }
 
 
-$rolename = match ($role['roles']) {
+$rolename = match ($role) {
     0 => "Owner",
     1 => "CEO",
     2 => "Dev",
@@ -35,7 +37,7 @@ $rolename = match ($role['roles']) {
 include "../includes/dashboard-includes/dashNav.php";
 include "../includes/header.php";
 
-echo "Welcome to the dashboard, " . $_SESSION['username'] . ".  You are a: " . $rolename;
+echo "Welcome to the dashboard, " . $username . ".  You are a: " . $rolename;
 echo "<br>";
 
 // include "../includes/footer.php";

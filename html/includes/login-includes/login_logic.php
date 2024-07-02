@@ -26,6 +26,7 @@ try {
 if ($user && isset($user['user_id'], $user['roles'])) {
     $_SESSION['username'] = $username;
     $_SESSION['user_id'] = $user['user_id'];
+    $_SESSION['user_roles'] = $user['roles'];
 
     if ($user['roles'] < 10) {
         header("Location: ../../pages/dashboard.php");
