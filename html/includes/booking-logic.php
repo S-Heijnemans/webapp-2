@@ -1,8 +1,8 @@
 <?php
 session_start(); // Ensure session is started
 
-$user_id = $_SESSION['user_id'];
-$user_role = $_SESSION['user_roles'];
+$user_id = $_SESSION['user_id'] ?? null;
+$role = $_SESSION['user_roles'] ?? null;
 
 
 require_once "../includes/conn.php";
