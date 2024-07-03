@@ -41,12 +41,11 @@ try {
         $stmt1->bindParam(':travel_end_date', $flights['retour_date'], PDO::PARAM_STR);
         $stmt1->execute();
 
-        if (!$user_role < 10) {
-            header("location: ../pages/user-dashboard.php");
-            die("Booking successfully added!");
-        }
-        else{
+        if (isset($role) && $role < 10) {
             header("location: ../pages/dashboard.php");
+            die("Booking successfully added!");
+        } else {
+            header("location: ../pages/user-dashboard.php");
             die("Booking successfully added!");
         }
     } else {
